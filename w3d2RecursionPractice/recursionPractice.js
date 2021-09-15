@@ -1,205 +1,109 @@
-module.exports = {getMatchingTree}
+/*eslint-disable*/
+"use strict";
+
+// const { log } = require("console");
+
+// /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
+//  */
+// //module.exports = {copyArray, concat, findMin, combineObjs }; //add all of your function names here that you need for the node mocha tests
+
 function TreeNode(value) {
-    this.value = value;
-    this.descendents = [];
+  this.value = value;
+  this.descendents = [];
 }
-   // create nodes with values
-const abe = new TreeNode('Abe');
-const homer = new TreeNode('Homer');
-const bart = new TreeNode('Bart');
-const lisa = new TreeNode('Lisa');
-const maggie = new TreeNode('Maggie');
-// associate root with is descendents
+// create nodes with values
+const abe = new TreeNode("Abe");
+const homer = new TreeNode("Homer");
+const bart = new TreeNode("Bart");
+const lisa = new TreeNode("Lisa");
+const maggie = new TreeNode("Maggie");
 abe.descendents.push(homer);
 homer.descendents.push(bart, lisa, maggie);
 
-function contains(tree,name){
-    if(tree.value===name)
+function logNames(root) {
+  console.log(root.value);
+  if (root.descendents.length != 0) {
+    for (let i = 0; i < root.descendents.length; i++) {
+      logNames(root.descendents[i]);
+    }
+  }
+}
+logNames(abe);
+function contains(tree, name) {
+  if (tree.value == name) return true;
+  if (tree.descendents && tree.descendents.length > 0) {
+    for (let item of tree.descendents) {
+      if (contains(item, name)) {
         return true;
-    if(tree.descendents && tree.descendents.length>0){
-        for(let item of tree.descendents){
-           if(contains(item,name))
-               return true;
-        }
+      }
     }
-   return false;
+  }
+  return false;
 }
+console.log(contains(abe, "list"));
 
-console.log( contains(abe,"Lisa"));
-function getMatchingTree(tree,name){
-    if(tree.value===name){
-        return tree;
+// /**
+//  * Given a target value, return the subtree with the found node or null if no match. Extend the
+// tree to have a more interesting test. Create a mocha test to run at least 2 or 3 tests on your tree. 
+//findSubtree(tree, “Homer”) → subtree with Homer as the root
+ ///
+function findSubTree(tree, value) {
+  if (tree.value == value) return tree;
+  else if (tree.descendents != 0) {
+    for (let ch of tree.descendents) {
+      if (contains(ch, value)) {
+        return findSubTree(ch, value);
+
+      }
     }
-    if(tree.descendents && tree.descendents.length>0){
-        for(let item of tree.descendents){
-           let matchingNode = getMatchingTree(item,name);
-           if(matchingNode){
-                return matchingNode; 
-           }
-        }
-    }
-    return null;
+  }
+  return null;
 }
-console.log("getMatchingTree ",getMatchingTree(abe,"Lisa"));
-
-function ListNode(value,next){
-    this.value = value;
+let result = findSubTree(abe, "Homer");
+logNames(result);
+function ListNode(node, next) {
+  this.node = node;
+  this.next = next;
 }
+let listNode = new ListNode("abe.value");
+let maggieNode = new ListNode("maggie.value", null);
+let lisaNode = new ListNode("lisa.value", maggieNode);
+let bartNode = new ListNode("bart.value", lisaNode);
+let homerNode = new ListNode("homer.value", bartNode);
+let abeNode = new ListNode("abe.value", homerNode);
 
-
-
-function findMaxArguments() {
-    let max = -Infinity;
-    console.log(arguments)
-    for (let i = 0; i < arguments.length; i++) {
-        console.log(arguments[i]);
-        if (arguments[i] > max) {
-            max = arguments[i];
-        }
-    }
-    return max;
+ function createList(abe) {
+  let listNode = new ListNode(abe.value);
+  listNode.next = new ListNode(homer.value);
+  listNode.next.next = new ListNode(bart.value);
+  listNode.next.next.next = new ListNode(lisa.value);
+  listNode.next.next.next.next = new ListNode(maggie.value);
+  console.log(JSON.stringify(listNode));
 }
 
-function restTest(x, y, ...more) {
-    let total = x + y;
-    console.log(total, x, y, more.length);
-    if (more.length > 0) {
-        for (let i = 0; i < arguments.length; i++) {
-            total += arguments[i];
-        }
-    }
-    console.log("Total: " + total);
-    return total;
+ createList(abe);
+//2
+/**
+ *  Given a target value in the list, return the node 
+ * that contains the target value or null if no match.
+    findListNode(list, “Bart”)
+ */
+
+function findListNode(list, target) {
+  if (list.node == target) return list;
+  if (list.next == null) return null;
+  return findListNode(list.next, target);
 }
+console.log(findListNode(homerNode, "homer.value"));
 
-function spreadTest() {
-    let a = [1, 2, 3];
-    // let b = a;
-    a.push([5, 6]);
+// function copyArray(arr) {
+//   return [...arr];
+// }
 
-    a = a.concat([5, 6])
-    console.log(a);
+// function concat(arr1, arr2) {
+//   return [...arr1, ...arr2];
+// }
 
-    let b = [...a];//copy of array- clone
-    b.splice(0, 1);
-    a.splice(0, 0, "add");
-    console.log(a, b);
-    console.log(a == b);
+// function findMin(...numbers) {}
 
-    let str = "Hello";
-    console.log(" spread ", [...str]);
-
-    let spread1 = [1, 2, 3];
-    let string = "dog";
-    let numberN = 2;
-    let booleanB = true;
-    let spread2 = [4, 5];
-    console.log([...spread1, ...spread2, string, numberN]);
-    console.log(spread1.concat(spread2, string, numberN));
-
-    abb = { a: 1, b: 2, c: 3, d: 44 }
-    baa = { ...abb }//copy of object - clone
-    console.log(baa) // {a:1, b:2, c:3, d: 44}
-    baa.a = 100;
-    console.log(abb) // {a:1, b:2, c:3, d: 44} 
-}
-
-    // console.log("  max element ",findMaxArguments(1, 123, 500, 115, 66, 88));
-    console.log("  max element ", findMaxArguments([1,"string",true,4,5],[1,2]));
-
-
-
-function linkedList() {
-    let list = { value: 1 };
-    list.next = { value: 2 };
-    list.next.next = { value: 3 };
-    list.next.next.next = { value: 4 };
-    list.next.next.next.next = { value: 5 };
-
-    //Split list 1,2 and newList 3,4
-    let newList = list.next.next;
-    list.next.next = null;
-    console.log(list, newList);
-    //Join newList again to list.
-    list.next.next = newList;
-
-    console.log(list);
-    console.log(JSON.stringify(list));
-    //Prepend New item to the list
-    list = { value: "new item", next: list }
-    console.log(list);
-}
-
-function linkedListAss() {
-    let c = { value: "C" }
-    let b = { value: "B", next: c }
-    let a = { value: "A", next: b };
-    console.log(a);
-    //delete link to B
-    a.next = a.next.next;
-    console.log(a);
-    //delete b.next;
-    b.next = null;
-    //Add B at the end after C
-    a.next.next = b;
-    //Add Z between c and b
-    c.next = { value: "Z" };
-    c.next.next = b;
-    console.log(JSON.stringify(a));
-}
-let node3 = {
-    name: "p",
-    value: "This is text in the a paragraph",
-    children: null
-};
-let node4 = {
-    name: "label",
-    value: "Name",
-    children: null
-};
-let node5 = {
-    name: "input",
-    value: "this was typed by a user",
-    children: null
-};
-let node2 = {
-    name: "div",
-    value: null,
-    children: [node4, node5]
-};
-let node1 = {
-    name: "body",
-    children: [node2, node3],
-    value: null,
-}
-
-
-//Q1
-function printNames(node1) {
-    console.log(node1.name + ":" + node1.value);
-    if (node1.children && node1.children.length > 0) {
-        //console.log("Inside IF ", node1.name);
-        node1.children.forEach(function (child) {
-            //console.log(`Inside forEach parent ${node1.name}  child ${child.name}`)
-            printNames(child);
-        })
-    }
-}
-
-function printNamesWithLoop(node1) {
-    console.log(node1.name + ":" + node1.value);
-    if (node1.children && node1.children.length > 0) {
-        // console.log("Inside IF ", node1.name);
-        node1.children.forEach(function (child) {
-            //console.log(`Inside forEach parent ${node1.name}  child ${child.name}`)
-            console.log(child.name + ":" + child.value);
-            if (child.children && child.children.length > 0) {
-                child.children.forEach(function (grandChild) {
-                    console.log(grandChild.name + ":" + grandChild.value);
-                });
-            }
-            //printNames(child);
-        })
-    }
-}
-//printNames(node1)
+// function combineObjs(obj1, obj2) {}
