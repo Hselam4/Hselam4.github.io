@@ -20,6 +20,25 @@ function times100(n){
  new array that has the function applied to each element of the input array. 
  Use your myMap function with your double and times100 functions.
   */
+
+ let myMap1 = function(array, fn){
+     //loop array
+     for(let i=0; i<array.length; i++){
+         fn(array[i])
+     }
+     
+     //inside the loop fn(element of the array)
+ }
+let newAyyay = [];
+array.forEach(function(element){
+    newArray.push(fn(element));
+})
+console.log(newArray);
+   
+
+
+
+
 // function that double an array values....
    
       let arr=[2,3,4,5];

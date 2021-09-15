@@ -10,20 +10,20 @@ module.exports = { accumulator, Calculator }; //add all of your function names h
  */
 
 
- functionAccumulator(startingValue, increment) 
- {        
+ functionAccumulator(startingValue, increment)
+  {    
  //implement this
  this.currentValue = startingValue;
  this.increment = increment;
 
  this.accumulate = function () {        
  this.currentValue += this.increment;
- returnthis.currentValue;
-   }        ;
+ return this.currentValue;
+   };
 
  this.report = function () {        
  returnthis.currentValue;
-   }        ;
+   };
  }        
 let accumulator = new Accumulator(5, 10);
 accumulator.report();
