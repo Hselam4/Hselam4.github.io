@@ -82,10 +82,9 @@ let abeNode = new ListNode("abe.value", homerNode);
 }
 
  createList(abe);
-//2
+
 /**
- *  Given a target value in the list, return the node 
- * that contains the target value or null if no match.
+ *  Given a target value in the list, return the node that contains the target value or null if no match.
     findListNode(list, “Bart”)
  */
 
@@ -96,14 +95,35 @@ function findListNode(list, target) {
 }
 console.log(findListNode(homerNode, "homer.value"));
 
-// function copyArray(arr) {
-//   return [...arr];
-// }
+ function copyArray(arr) {
+   return [...arr];
+ }
 
-// function concat(arr1, arr2) {
-//   return [...arr1, ...arr2];
-// }
+ function concat(arr1, arr2) {
+   return [...arr1, ...arr2];
+ }
 
-// function findMin(...numbers) {}
+function findMin(...numbers) {}
 
-// function combineObjs(obj1, obj2) {}
+function combineObjs(obj1, obj2){}
+
+
+
+// function makeCount() {
+//     let counter = 0;
+  
+//     return function() {
+//       return counter++;
+//     };
+//   }
+  
+//   let count = makeCount();
+//   let counter1 = makeCount();
+
+//   console.log(count()); 
+// console.log(count()); 
+// console.log(makeCount());
+
+// console.log(counter1()); 
+// console.log(counter1());
+  
