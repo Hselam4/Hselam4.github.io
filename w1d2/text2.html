@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <title>Click to add</title>
+    </head>
+    
+    <body>
+    <h3>Input</h3>
+    <div>
+    <input type="text" id = "myText"/>
+    </div>
+    <h3>Output</h3>
+    <div>
+    <textarea type ="text" id ="myTextArea"></textarea> 
+    </br>
+    <br>
+    <input type ="button" value="Click to add" id ="myButton"/>
+    </div>
+    </body>
+    
+    </html>
+    <script>
+    function connect() {
+    const myText = document.getElementById("myText");
+    const myTextArea = document.getElementById("myTextArea");
+    myTextArea.value = myText.value;
+    myText.value = "";
+    }
+    const myButton = document.getElementById("myButton");
+    myButton.addEventListener("click",connect);
+    </script>

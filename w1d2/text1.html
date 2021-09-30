@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>selam</title>
+</head>
+
+<html>
+<p id="itemName">
+    Input
+    <br>
+    <input id="id1" type="text" value="" />
+</p>
+
+<body id="itemout">
+    Output
+    <br>
+    <input id="id2" type="text" value="" />
+    <br>
+    <br>
+    <input type="button" onclick="clicked()" value="click to add">
+
+    <br>
+
+    <script>
+
+        function clicked() {
+
+            let input = document.getElementById("id1");
+            let output = document.getElementById("id2");
+            output.value = input.value + output.value;
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

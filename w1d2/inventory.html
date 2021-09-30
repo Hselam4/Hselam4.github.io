@@ -1,0 +1,60 @@
+<html>
+
+<body>
+    <p><b>Inventary</b></p>
+    <table>
+        <tr>
+            <th>Item Name</th>
+        </tr>
+    </table>
+    <input type="text" value="">
+
+    <table>
+        <tr>
+            <th>Item Catagory</th>
+        </tr>
+    </table>
+
+    <input type="text" value="">
+    <table>
+        <tr>
+            <th>Quantity</th>
+        </tr>
+    </table>
+    <input type="text" value="">
+    <p>
+        <button onclick="add()">add</button>
+    </p>
+    <table>
+        <table>
+            <th>Product Name </th>
+            <th colspan="2"> Catagory </th>
+            <th colspan="3"> Quantity </th>
+            <tr>
+                <td>Computer</td>
+                <td>Degital</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Magazine</td>
+                <td>Convenience</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>Book</td>
+                <td>Education</td>
+                <td>20</td>
+            </tr>
+        </table>
+
+
+        <script>
+            function add() {
+                let ol = document.createElement("ol");
+                document.body.append(ol);
+
+            }
+        </script>
+</body>
+
+</html>
