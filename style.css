@@ -1,0 +1,61 @@
+img {
+    max-width: 200px;
+    object-fit:cover;
+    overflow:visible;
+    padding: 0.5%;
+    border: 1px solid goldenrod;
+    background-color: rgba(226, 213, 215, 0.699);
+    
+}
+ul h5{
+    padding:-10px;
+}
+tr td, tr th{
+    
+    padding-left: 20px;
+    padding-right: 300px;
+    border: 1px solid goldenrod;
+}
+body{
+    padding: 20px;
+}
+.page{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap:20px
+    
+}
+.fav{
+    border: 1px solid goldenrod;
+    background-color: rgb(217, 217, 218);
+    padding-top: 15px; 
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-bottom: 400px;
+}
+.alert{
+    border:1px solid rgb(245, 167, 167) ;
+    background-color:rgb(250, 218, 219);
+}
+
+.image{
+    padding-top: 20px;
+    display: flex;
+    column-gap: 20px;
+    
+}
+.bottomTxt{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.bottomTxt  b {
+    font-size: 30px;
+}
+.detail{
+    border-left: 1px solid goldenrod;
+    padding-left: 10px;
+}
