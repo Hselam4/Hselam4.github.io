@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+    <form class="row g-3 mt-3">
+        <h1 class="col-12 text-center"> <b>Responsive Registration</b></h1>
+        <h1 class="col-12 text-center"> <b>Form</b></h1>
+        
+        <div class="input-group mb-3 " >
+            <span class= "input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+              </svg>
+            </span>
+            <input type="text" class="form-control" id= "validationServer01" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </span>
+            <input type="text" class="form-control" id="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" value="" >
+        </div>
+        
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1" fill="currentColor"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </span>
+            <input type="text" class="form-control" id="re-type" placeholder=" Re-type Password" aria-label="Re-type Password" aria-describedby="basic-addon1" >
+        </div>
+
+        <div class="row">
+            
+            <div class="pswordrow row col-6 mb- m-auto ">
+                <div class="input-group row mb-3">
+                <span class="input-group-text text-center col-2" id="basic-addon1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-person-fill " viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                </span>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="First Name">
+                </div>
+                </div>
+                <div class="pswordrow row col-6 mb-3 m-auto ">
+                <div class="input-group row mb-3">
+                <span class="input-group-text col-2" id="basic-addon1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-person-fill " viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                </span>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
+                </div>
+                </div>
+
+          <div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"  >
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"  >
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+        </div>
+
+        <div class="col-12 mb-3">
+            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+            <select class="form-select" id="autoSizingSelect" >
+              <option selected>Select Country...</option>
+              <option value="1">Paris</option>
+              <option value="2">Kenya</option>
+              <option value="3">Mali</option>
+              <option value="4">Jamaica</option>
+              <option value="5">Australia</option>
+              <option value="6">Italy</option>
+            </select>
+          </div>
+
+          <div class="row mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+            <label class="form-check-label" for="flexCheckDefault">
+              I agree with the terms and condtions
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+            <label class="form-check-label" for="flexCheckChecked">
+              I want to recieve the newsletter
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="btn btn-warning" onclick="validate()">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+
+        
+        
+        function validate() {
+
+            let validate1 = document.getElementsByTagName("password")
+            let validate2 = document.getElementsByName("re-type")
+
+            if(validate1 !== validate2){
+            alert("password is not the same and needs to match")
+            }
+        }
+    </script>
+    
+</body>
+</html>
